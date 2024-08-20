@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 30px;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+}
+
+.inner-wrppaer {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 280px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    /* position: absolute;
+    animation: move 5s ease infinite forwards; */
+}
+
+.item {
+    /* opacity: 0; */
+}
+
+.item h2 {
+    margin: 0;
+}
+
+.item a {
+    display: inline-block;
+    padding: 13px 23px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.inner-wrppaer:hover .item {
+    /* animation: fadeIn 1s ease 1 forwards; */
+}
+
+
+
+@keyframes move {
+    0% {
+        top: 30px;
+        left: 30px;
+    }
+    20% {
+        left: 30px;
+        top: calc(100% - 310px);
+    }
+    50% {
+        left: calc(100% - 310px);
+        top: calc(100% - 310px);
+    }
+    80% {
+        top: 30px;
+        left: calc(100% - 310px);
+    }
+    100% {
+        top: 30px;
+        left: 30px;
+    }
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@media only screen and (max-width: 1200px) and (orientation: landscape) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    body {
+        align-items: flex-start;
+        height: auto;
+    }
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
